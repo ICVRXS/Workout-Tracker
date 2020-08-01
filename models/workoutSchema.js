@@ -25,9 +25,16 @@ const workoutSchema = new Schema({
         weight: Number,
         reps: Number,
         sets: Number,
-        distance: Number
+        distance: Number,
+        totalDuration: Number
     }]
 });
+
+workoutSchema.methods.setTotalDuration = function() {
+    this.totalDuration = this.duration + this.totalDuration;
+  
+    return this.totalDuration;
+  };
 
 const Workout = mongoose.model("Workout", workoutSchema);
 
