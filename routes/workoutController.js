@@ -2,6 +2,7 @@ const router = require("express").Router();
 const {Workout} = require("../models");
 
 router.post("/api/workouts", (req, res) => {
+    console.log("Workouts page");
     Workout.create(req.body)
         .then(dbWorkouts => {
             res.json(dbWorkouts);
