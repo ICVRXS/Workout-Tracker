@@ -1,13 +1,10 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const logger = require("morgan");
-const timeout = require("connect-timeout");
 
 const PORT = process.env.PORT || 8080;
 
 const app = express();
-
-app.use(timeout("30"));
 
 app.use(logger("dev"));
 
